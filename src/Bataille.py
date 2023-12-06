@@ -1,6 +1,8 @@
+# Bataille.py
 import random
 
-class CardGame:
+
+class Bataille:
     def __init__(self):
         self.deck = []
         self.player1 = []
@@ -20,8 +22,8 @@ class CardGame:
         """
         Distribue les cartes du jeu aux deux joueurs.
         """
-        self.player1 = self.deck[:26]
-        self.player2 = self.deck[26:]
+        self.player1 = random.sample(self.deck, k=len(self.deck) // 2)
+        self.player2 = [card for card in self.deck if card not in self.player1]
 
     def play_round(self):
         """
@@ -42,11 +44,13 @@ class CardGame:
             self.player2.append(card2)
             print("Joueur 2 remporte la manche.")
         else:
+            self.player1.append(card1)
+            self.player2.append(card2)
             print("Égalité !")
 
         self.rounds += 1
 
-    def play_game(self):
+    def run(self):
         """
         Joue une partie complète de bataille.
         """
@@ -70,7 +74,3 @@ class CardGame:
             print("Joueur 2 remporte la partie !")
         else:
             print("La partie se termine par une égalité !")
-
-# Exemple d'utilisation
-game = CardGame()
-game.play_game()

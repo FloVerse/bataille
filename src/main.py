@@ -1,8 +1,6 @@
-from game import Game
-
+# main.py
+from Bataille import Bataille
 
 if __name__ == "__main__":
-    game = Game()
-    game.run()
-    # bataille = Bataille()
-    # bataille.run()
+    bataille_game = Bataille()
+    bataille_game.run()
