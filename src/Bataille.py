@@ -77,8 +77,9 @@ class Bataille:
             print("Joueur 2 remporte la bataille.")
         # Egalité
         else:
+            print("Bataille !")
             self.bataille(newCard1, newCard2)
-            print("Égalité !")
+
 
     def play_round(self):
         """
@@ -101,8 +102,9 @@ class Bataille:
             print("Joueur 2 remporte la manche.")
         # Egalité
         else:  # à traiter
+            print("Bataille !")
             self.bataille(card1, card2)
-            print("Égalité !")
+
 
         self.rounds += 1
 
